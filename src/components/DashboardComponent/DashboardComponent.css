@@ -1,0 +1,17 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dashboard-container{
+    width: 100%;
+    max-width: 80vw;
+    height: 100vh;
+    background-color: #FAFAFE;
+    ;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+}
