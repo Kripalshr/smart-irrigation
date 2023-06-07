@@ -60,6 +60,7 @@ class DashboardComponent extends Component {
   handleManualIrrigationToggle = () => {
     this.setState((prevState) => ({
       manualIrrigation: !prevState.manualIrrigation,
+      recordData: false,
     }));
   };
 
@@ -99,7 +100,7 @@ class DashboardComponent extends Component {
           <div className="status-bar">
             <div className="status">Irrigation status :</div>
             <div className="on-off">
-              <div>{`${
+              <div className="text">{`${
                 smartIrrigation || manualIrrigation ? "ON" : "OFF"
               }`}</div>
               <div

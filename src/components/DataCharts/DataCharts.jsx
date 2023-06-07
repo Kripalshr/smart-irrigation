@@ -98,7 +98,6 @@ class DataChart extends Component {
     return (
       <div className="datachart-container">
         <div className="contents">
-          Hello world!!
           <LineChart data={chartData} />
         </div>
       </div>

@@ -82,10 +82,24 @@ class LineChart extends Component {
     svg
       .append("g")
       .attr("transform", `translate(0,${height})`)
-      .call(d3.axisBottom(xScale));
+      .call(d3.axisBottom(xScale))
+      .append("text")
+      .attr("x", width / 2)
+      .attr("y", margin.bottom)
+      .attr("fill", "#000")
+      .text("Time");
 
     // Add y-axis
-    svg.append("g").call(d3.axisLeft(yScale));
+    svg
+      .append("g")
+      .call(d3.axisLeft(yScale))
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -margin.left)
+      .attr("x", -height / 2)
+      .attr("dy", "1em")
+      .attr("fill", "#000")
+      .text("Range");
   }
 
   render() {

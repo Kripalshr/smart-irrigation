@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-import './Meter.css';
-import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
-import soilmoisture from '../../assets/soil-moisture.png'
-import axios from 'axios';
+import React, { Component } from "react";
+import "./Meter.css";
+import {
+  buildStyles,
+  CircularProgressbarWithChildren,
+} from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import soilmoisture from "../../assets/soil-moisture.png";
+import axios from "axios";
 
 class Meter extends Component {
   constructor(props) {
@@ -26,13 +29,14 @@ class Meter extends Component {
   }
 
   fetchMeterValue = () => {
-    axios.get('http://localhost:3333/api/moisture')
-      .then(response => {
+    axios
+      .get("http://localhost:3333/api/moisture")
+      .then((response) => {
         const moisture = response.data.moisture;
         this.setState({ meterValue: moisture });
       })
-      .catch(error => {
-        console.error('Error:', error);
+      .catch((error) => {
+        console.error("Error:", error);
       });
   };
 
@@ -45,45 +49,52 @@ class Meter extends Component {
   render() {
     const { meterValue } = this.state;
 
+    let pathColor;
+    if (meterValue < 20) {
+      pathColor = "red";
+    } else if (meterValue >= 20 && meterValue <= 60) {
+      pathColor = "orange";
+    } else {
+      pathColor = "green";
+    }
+
     return (
       <div className="meter-container">
         <h2>Soil Moisture</h2>
         <div className="meter" style={{ width: 200, height: 200 }}>
           <CircularProgressbarWithChildren
-            value={meterValue} 
+            value={meterValue}
             // text={`${meterValue}%`}
             strokeWidth={10}
             styles={buildStyles({
-                // Rotation of path and trail, in number of turns (0-1)
-                rotation: 0.5,
-            
-                // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
-                strokeLinecap: 'butt',
-            
-                // Text size
-                textSize: '16px',
-            
-                // How long animation takes to go from one percentage to another, in seconds
-                pathTransitionDuration: 0.5,
-            
-                // Can specify path transition in more detail, or remove it entirely
-                // pathTransition: 'none',
-            
-                // Color
-                pathColor: `rgba(55, 238, 20, ${meterValue / 100})`,
-                textColor: '#f88',
-                trailColor: '#d6d6d6',
-                backgroundColor: '#3e98c7',
-              })}
+              // Rotation of path and trail, in number of turns (0-1)
+              rotation: 0.5,
+
+              // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+              strokeLinecap: "butt",
+
+              // Text size
+              textSize: "16px",
+
+              // How long animation takes to go from one percentage to another, in seconds
+              pathTransitionDuration: 0.5,
+
+              // Can specify path transition in more detail, or remove it entirely
+              // pathTransition: 'none',
+
+              // Color
+              pathColor: pathColor,
+              textColor: "#f88",
+              trailColor: "#d6d6d6",
+              backgroundColor: "#3e98c7",
+            })}
           >
-            <img 
-              className='soil-image'
-              src={soilmoisture}
-              alt='doge'
-            />
+            <img className="soil-image" src={soilmoisture} alt="doge" />
           </CircularProgressbarWithChildren>
         </div>
-        <div className='meter-reading'><h2>{meterValue}%</h2></div>
+        <div className="meter-reading">
+          <h2>{meterValue}%</h2>
+        </div>
       </div>
     );
   }
