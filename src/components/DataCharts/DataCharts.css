@@ -1,0 +1,35 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.datachart-container{
+    width: 100%;
+    max-width: 80vw;
+    height: 100vh;
+    background-color: #FAFAFE;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.contents{
+    margin: 5em;
+}
+
+h2{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.dashboard-components{
+    display: flex;
+    margin-top: 5em;
+    justify-content: space-between;
+}

@@ -1,0 +1,37 @@
+.LineChart {
+    width: 600px;
+    height: 400px;
+  }
+
+  .line-chart{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 32px 50px;
+    gap: 12px;
+    width: 700px;
+    height: 500px;
+    /* Pure */
+
+    background: #FFFFFF;
+    box-shadow: 0px 1px 8px rgba(110, 110, 110, 0.1);
+    border-radius: 12px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  
+  .LineChart svg {
+    overflow: visible;
+  }
+  
+  .LineChart path {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2;
+  }
+
+  

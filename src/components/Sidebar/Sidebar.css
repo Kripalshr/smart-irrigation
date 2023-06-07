@@ -1,20 +1,75 @@
-*, *::before, *::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.side-bar{
-    height: 100vh;
-    background-color: #ffffff;
-    width: 100%;
-    max-width: 20vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
+.side-bar {
+  height: 100vh;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 20vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1rem;
+}
+
+.item-dashboard {
+  /* Sidebar item styles */
+  /* Add common styles for all items */
+
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  cursor: pointer;
+}
+
+.item-dashboard:hover {
+  /* Styles for item when hovered */
+  background-color: #eaeaea;
+}
+
+.item-dashboard.active {
+  /* Styles for active item */
+  background-color: #e1f5ff;
+  border-radius: 5px;
+}
+
+.item-dashboard > img {
+  min-width: 15px;
+  min-height: 15px;
+}
+p {
+  margin-left: 10px;
+  font-size: 1rem;
+  line-height: 17px;
+  color: #21b2fd;
+  margin-top: 1rem;
+}
+.sidebaritems {
+  text-align: left;
+}
+
+.logoutbutton {
+  background-color: red !important;
+}
+
+.sidebar-contents {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-button {
+  margin-top: 42rem;
 }
