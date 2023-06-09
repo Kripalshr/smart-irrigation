@@ -99,6 +99,23 @@ class DataChart extends Component {
       <div className="datachart-container">
         <div className="contents">
           <LineChart data={chartData} />
+          <div>
+            <h2>Index</h2>
+            <div className="index-container">
+              <div className="index">
+                <div className="line-red" />
+                <p>Humidity</p>
+              </div>
+              <div className="index">
+                <div className="line-blue" />
+                <p>soil Moisture</p>
+              </div>
+              <div className="index">
+                <div className="line-green" />
+                <p>temperature</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

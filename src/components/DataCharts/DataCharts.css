@@ -1,35 +1,83 @@
-*, *::before, *::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.datachart-container{
-    width: 100%;
-    max-width: 80vw;
-    height: 100vh;
-    background-color: #FAFAFE;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 0;
-    top: 0;
+.datachart-container {
+  width: 100%;
+  max-width: 80vw;
+  height: 100vh;
+  background-color: #fafafe;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-.contents{
-    margin: 5em;
+.contents {
+  margin: 5em;
+  /* display: flex; */
 }
 
-h2{
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
+.datachart-container > .contents {
+  display: flex;
 }
 
-.dashboard-components{
-    display: flex;
-    margin-top: 5em;
-    justify-content: space-between;
+.datachart-container > .contents > div > h2 {
+  margin-left: 3em;
+}
+
+.datachart-container > .contents > h2 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.dashboard-components {
+  display: flex;
+  margin-top: 5em;
+  justify-content: space-between;
+}
+
+.line-red {
+  background-color: red;
+  width: 50px;
+  height: 5px;
+}
+
+.line-blue {
+  background-color: blue;
+  width: 50px;
+  height: 5px;
+}
+
+.line-green {
+  background-color: green;
+  width: 50px;
+  height: 5px;
+}
+
+.index {
+  display: flex;
+  padding: 10px;
+}
+
+.index > div {
+  margin-top: 10px;
+}
+
+.index > p {
+  margin-top: 5px;
+  margin-left: 10px;
+  text-transform: capitalize;
+}
+
+.index-container {
+  margin-left: 5em;
 }
